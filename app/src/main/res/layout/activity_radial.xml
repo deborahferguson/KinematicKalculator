@@ -1,0 +1,182 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.developer.debbie.kinematickalculator.Radial"
+    android:id="@+id/RelativeLayout"
+    android:background="@android:color/black">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="α: acceleration"
+        android:id="@+id/AccelerationLabel"
+        android:layout_below="@+id/Header"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/primary_material_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Δθ: distance"
+        android:id="@+id/DistanceLabel"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/AccelerationLabel"
+        android:layout_alignLeft="@+id/AccelerationLabel"
+        android:layout_alignStart="@+id/AccelerationLabel"
+        android:textColor="@color/primary_material_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ωi: initial velocity"
+        android:id="@+id/Velocity_i_Label"
+        android:layout_below="@+id/DistanceLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp"
+        android:textColor="@color/primary_material_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ωf: final velocity"
+        android:id="@+id/Velocity_f_Label"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/initVel"
+        android:layout_alignLeft="@+id/TimeLabel"
+        android:layout_alignStart="@+id/TimeLabel"
+        android:textColor="@color/primary_material_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="t: time"
+        android:id="@+id/TimeLabel"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/Velocity_f_Label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/primary_material_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter Given Values"
+        android:id="@+id/Header"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/primary_material_light" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/acceleration"
+        android:layout_alignLeft="@+id/distance"
+        android:layout_alignStart="@+id/distance"
+        android:gravity="right"
+        android:textColor="@color/primary_material_light"
+        android:background="#ff272727"
+        android:layout_alignTop="@+id/AccelerationLabel"
+        android:layout_alignRight="@+id/Header"
+        android:layout_alignEnd="@+id/Header" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/distance"
+        android:layout_alignTop="@+id/DistanceLabel"
+        android:layout_toRightOf="@+id/Velocity_i_Label"
+        android:gravity="right"
+        android:textColor="@color/primary_material_light"
+        android:background="#ff272727"
+        android:layout_alignRight="@+id/Header"
+        android:layout_alignEnd="@+id/Header" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/initVel"
+        android:layout_alignTop="@+id/Velocity_i_Label"
+        android:layout_toRightOf="@+id/Velocity_i_Label"
+        android:gravity="right"
+        android:textColor="@color/primary_material_light"
+        android:background="#ff272727"
+        android:layout_alignRight="@+id/distance"
+        android:layout_alignEnd="@+id/distance" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/finalVel"
+        android:layout_alignBottom="@+id/Velocity_f_Label"
+        android:layout_alignLeft="@+id/initVel"
+        android:layout_alignStart="@+id/initVel"
+        android:gravity="right"
+        android:textColor="@color/primary_material_light"
+        android:background="#ff272727"
+        android:layout_alignRight="@+id/initVel"
+        android:layout_alignEnd="@+id/initVel" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/time"
+        android:layout_alignBottom="@+id/TimeLabel"
+        android:layout_alignLeft="@+id/finalVel"
+        android:layout_alignStart="@+id/finalVel"
+        android:gravity="right"
+        android:textColor="@color/primary_material_light"
+        android:background="#ff272727"
+        android:layout_alignRight="@+id/finalVel"
+        android:layout_alignEnd="@+id/finalVel" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/calc"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/TimeLabel"
+        android:layout_alignStart="@+id/TimeLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/errors"
+        android:layout_above="@+id/calc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/primary_material_light" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:id="@+id/ResetButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
