@@ -17,7 +17,8 @@ public class Projectile extends ActionBarActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
+
 
         setContentView(R.layout.activity_projectile);
 
