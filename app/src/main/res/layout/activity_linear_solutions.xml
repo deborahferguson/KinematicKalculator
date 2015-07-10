@@ -123,4 +123,31 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textColor="@color/primary_material_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Walk Through"
+        android:id="@+id/WalkThroughLabel"
+        android:layout_below="@+id/TimeLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/primary_material_light" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/FirstEquationPicture"
+        android:layout_below="@+id/WalkThroughLabel"
+        android:layout_alignLeft="@+id/SecondEquationPicture"
+        android:layout_alignStart="@+id/SecondEquationPicture" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SecondEquationPicture"
+        android:layout_below="@+id/FirstEquationPicture"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

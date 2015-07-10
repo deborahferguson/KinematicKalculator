@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -22,6 +23,9 @@ public class LinearSolutions extends ActionBarActivity {
         double iVelocity = intent.getDoubleExtra("initial velocity",0.0);
         double fVelocity = intent.getDoubleExtra("final velocity",0.0);
         double time = intent.getDoubleExtra("time",0.0);
+
+        double firstEquation = intent.getDoubleExtra("first equation", 0.0);
+        double secondEquation = intent.getDoubleExtra("second equation", 0.0);
 
         setContentView(R.layout.activity_linear_solutions);
 
@@ -48,6 +52,114 @@ public class LinearSolutions extends ActionBarActivity {
         FinalVelocityValue.setText(Double.toString(fVelocity));
         TimeValue.setText(Double.toString(time));
 
+        ImageView Equation1 = (ImageView) findViewById(R.id.FirstEquationPicture);
+        ImageView Equation2 = (ImageView) findViewById(R.id.SecondEquationPicture);
+
+        switch ((int)firstEquation) {
+            case 1:
+                Equation1.setImageResource(R.drawable.equation1a);
+                break;
+            case 2:
+                Equation1.setImageResource(R.drawable.equation1d);
+                break;
+            case 3:
+                Equation1.setImageResource(R.drawable.equation1i);
+                break;
+            case 4:
+                Equation1.setImageResource(R.drawable.equation1t);
+                break;
+            case 5:
+                Equation1.setImageResource(R.drawable.equation2a);
+                break;
+            case 6:
+                Equation1.setImageResource(R.drawable.equation2d);
+                break;
+            case 7:
+                Equation1.setImageResource(R.drawable.equation2f);
+                break;
+            case 8:
+                Equation1.setImageResource(R.drawable.equation2i);
+                break;
+            case 9:
+                Equation1.setImageResource(R.drawable.equation3a);
+                break;
+            case 10:
+                Equation1.setImageResource(R.drawable.equation3f);
+                break;
+            case 11:
+                Equation1.setImageResource(R.drawable.equation3i);
+                break;
+            case 12:
+                Equation1.setImageResource(R.drawable.equation3t);
+                break;
+            case 13:
+                Equation1.setImageResource(R.drawable.equation4d);
+                break;
+            case 14:
+                Equation1.setImageResource(R.drawable.equation4f);
+                break;
+            case 15:
+                Equation1.setImageResource(R.drawable.equation4i);
+                break;
+            case 16:
+                Equation1.setImageResource(R.drawable.equation4t);
+                break;
+            default:
+                break;
+        }
+
+        switch ((int)secondEquation) {
+            case 1:
+                Equation2.setImageResource(R.drawable.equation1a);
+                break;
+            case 2:
+                Equation2.setImageResource(R.drawable.equation1d);
+                break;
+            case 3:
+                Equation2.setImageResource(R.drawable.equation1i);
+                break;
+            case 4:
+                Equation2.setImageResource(R.drawable.equation1t);
+                break;
+            case 5:
+                Equation2.setImageResource(R.drawable.equation2a);
+                break;
+            case 6:
+                Equation2.setImageResource(R.drawable.equation2d);
+                break;
+            case 7:
+                Equation2.setImageResource(R.drawable.equation2f);
+                break;
+            case 8:
+                Equation2.setImageResource(R.drawable.equation2i);
+                break;
+            case 9:
+                Equation2.setImageResource(R.drawable.equation3a);
+                break;
+            case 10:
+                Equation2.setImageResource(R.drawable.equation3f);
+                break;
+            case 11:
+                Equation2.setImageResource(R.drawable.equation3i);
+                break;
+            case 12:
+                Equation2.setImageResource(R.drawable.equation3t);
+                break;
+            case 13:
+                Equation2.setImageResource(R.drawable.equation4d);
+                break;
+            case 14:
+                Equation2.setImageResource(R.drawable.equation4f);
+                break;
+            case 15:
+                Equation2.setImageResource(R.drawable.equation4i);
+                break;
+            case 16:
+                Equation2.setImageResource(R.drawable.equation4t);
+                break;
+            default:
+                break;
+        }
 
         //setContentView(R.layout.activity_linear_solutions);
         // Create the text view

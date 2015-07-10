@@ -176,7 +176,8 @@ public class Radial extends ActionBarActivity implements View.OnClickListener{
             double tim = new Double(t);
 
             double init = fin-acc*tim;
-            double dist = fin*tim-(-2)*(acc*tim)*(acc*tim);
+            double dist = fin*tim-(1/2)*acc*tim*tim;
+            //double dist = fin*tim-(-2)*(acc*tim)*(acc*tim);
 
             result = "distance = "+dist+" and initial velocity = "+init;
         }
@@ -225,7 +226,8 @@ public class Radial extends ActionBarActivity implements View.OnClickListener{
             double tim = new Double(t);
 
             double init = (dist-acc*tim*tim/2)/tim;
-            double fin = (dist+(acc*tim)*(acc*tim)/2)/tim;
+            //double fin = (dist+(acc*tim)*(acc*tim)/2)/tim;
+            double fin = (dist+(acc*tim*tim)/2)/tim;
 
             result = "initial velocity = "+init+" and final velocity = "+fin;
         }

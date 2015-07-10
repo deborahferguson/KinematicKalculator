@@ -83,6 +83,16 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             //    result = "These values are not possible";
             //}
             //ErrorMessage.setText(result);
+            boolean error = false;
+            for(int j=0; j<6; j++){
+                if(Double.toString(result[j]).equals("NaN")){
+                    error=true;
+                    break;
+                }
+            }
+            if(error){
+                result[5]=1;
+            }
             if(result[5]==1){
                 ErrorMessage.setText("These values are not possible");
             }
@@ -123,11 +133,29 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
         intent.putExtra("igiven", values[8]);
         intent.putExtra("fgiven", values[9]);
         intent.putExtra("tgiven", values[10]);
+        intent.putExtra("first equation", values[11]);
+        intent.putExtra("second equation", values[12]);
 
         startActivity(intent);
     }
 
     public double[] Equations(String a, String d, String i, String f, String t){
+        //equation1a - 1
+        //equation1d - 2
+        //equation1i - 3
+        //equation1t - 4
+        //equation2a - 5
+        //equation2d - 6
+        //equation2f - 7
+        //equation2i - 8
+        //equation3a - 9
+        //equation3f - 10
+        //equation3i - 11
+        //equation3t - 12
+        //equation4d - 13
+        //equation4f - 14
+        //equation4i - 15
+        //equation4t - 16
         double acceleration=0;
         double distance=0;
         double initialvel=0;
@@ -139,6 +167,8 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
         double igiven = 0;
         double fgiven = 0;
         double tgiven = 0;
+        double firstEquation = 0;
+        double secondEquation = 0;
 
         if(a.equals("") && !d.equals("") && !i.equals("") && !f.equals("") && !t.equals("")){
             double dist = new Double(d);
@@ -159,6 +189,7 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             if(Math.round(acc*10000)==Math.round(acc2*10000)){
                 //result = "acceleration = "+acc;
                 acceleration=acc;
+                firstEquation = 9;
             }
             else{
                 //result = "These values are not possible ";
@@ -177,7 +208,9 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             tgiven = 1;
 
             double acc = (fin-init)/tim;
+            firstEquation = 9;
             double dist = (init+fin)*tim/2.0;
+            secondEquation = 13;
 
             //result = "acceleration = "+acc+" and distance = "+dist;
             acceleration = acc;
@@ -195,7 +228,9 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             tgiven = 1;
 
             double init = dist*2/tim-fin;
+            firstEquation = 15;
             double acc = (fin-init)/tim;
+            secondEquation = 9;
 
             //result = "acceleration = "+acc+" and initial velocity = "+init;
             acceleration = acc;
@@ -213,8 +248,9 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             tgiven = 1;
 
             double acc = (dist-init*tim)*2/(tim*tim);
+            firstEquation = 1;
             double fin = dist*2/tim-init;
-
+            secondEquation = 14;
             //result = "acceleration = "+acc+" and final velocity = "+fin;
             acceleration = acc;
             finalvel = fin;
@@ -231,7 +267,9 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             fgiven = 1;
 
             double acc = (fin*fin-init*init)/(2*dist);
+            firstEquation = 5;
             double tim = dist*2/(init+fin);
+            secondEquation = 16;
             if(tim<0){
                 tim = tim*-1;
             }
@@ -261,6 +299,7 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             if(Math.round(dist*10000) == Math.round(dist2*10000)){
                 //result = "distance = "+dist;
                 distance = dist;
+                firstEquation = 2;
             }
             else{
                 //result = "Those values are not possible";
@@ -279,7 +318,13 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             tgiven = 1;
 
             double init = fin-acc*tim;
-            double dist = fin*tim-(-2)*(acc*tim)*(acc*tim);
+            firstEquation = 11;
+            //this equation seemed to be wrong....
+            //check this
+            //keep checking it
+            //double dist = fin*tim-(-2)*(acc*tim)*(acc*tim);
+            double dist = fin*tim-(1/2)*acc*tim*tim;
+            secondEquation = 2;
 
             //result = "distance = "+dist+" and initial velocity = "+init;
             distance = dist;
@@ -297,8 +342,9 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             tgiven = 1;
 
             double dist = init*tim+acc*tim*tim/2;
+            firstEquation = 2;
             double fin = init+acc*tim;
-
+            secondEquation = 10;
             //result = "distance = "+dist+" and final velocity = "+fin;
             distance = dist;
             finalvel = fin;
@@ -315,7 +361,9 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             fgiven = 1;
 
             double dist = (fin*fin-init*init)/(2*acc);
+            firstEquation = 6;
             double tim = (fin-init)/acc;
+            secondEquation = 12;
             if(tim<0){
                 tim=tim*-1;
             }
@@ -344,6 +392,7 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             if(Math.round(init*10000) == Math.round(init2*10000)){
                 //result = "initial velocity = "+init;
                 initialvel = init;
+                firstEquation = 11;
             }
             else {
                 //result = "Those values are not possible";
@@ -362,7 +411,12 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             tgiven = 1;
 
             double init = (dist-acc*tim*tim/2)/tim;
-            double fin = (dist+(acc*tim)*(acc*tim)/2)/tim;
+            firstEquation = 3;
+            //double check this
+            //double check this
+            //double fin = (dist+(acc*tim)*(acc*tim)/2)/tim;
+            double fin = (dist+(acc*tim*tim)/2)/tim;
+            secondEquation = 10;
 
             //result = "initial velocity = "+init+" and final velocity = "+fin;
             initialvel = init;
@@ -380,7 +434,9 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             fgiven = 1;
 
             double init = Math.sqrt(fin*fin-2*acc*dist);
+            firstEquation = 8;
             double tim = (fin-init)/acc;
+            secondEquation = 12;
             if(tim<0){
                 tim=tim*-1;
             }
@@ -410,6 +466,7 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             if(Math.round(fin*10000) == Math.round(fin2*10000)){
                 //result = "final velocity = "+fin;
                 finalvel = fin;
+                firstEquation = 10;
             }
             else{
                 //result = "Those values are not possible";
@@ -428,7 +485,9 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             igiven = 1;
 
             double fin = Math.sqrt(init*init+2*acc*dist);
+            firstEquation = 7;
             double tim = (fin-init)/acc;
+            secondEquation = 12;
 
             double dist2 = init*tim+acc*tim*tim/2;
             Log.i("tag", "" + dist2);
@@ -468,6 +527,7 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
             if(Math.round(tim*10000) == Math.round(tim2*10000)){
                 //result = "time = "+tim;
                 time = tim;
+                firstEquation = 12;
             }
             else{
                 //result = "Those values are not possible";
@@ -481,7 +541,7 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
         }
 
         //return result;
-        double[] returnVal = new double[11];
+        double[] returnVal = new double[13];
         returnVal[0]=acceleration;
         returnVal[1]=distance;
         returnVal[2]=initialvel;
@@ -493,7 +553,8 @@ public class Linear2D extends ActionBarActivity implements View.OnClickListener{
         returnVal[8]=igiven;
         returnVal[9]=fgiven;
         returnVal[10]=tgiven;
-
+        returnVal[11]=firstEquation;
+        returnVal[12]=secondEquation;
         return returnVal;
     }
 
