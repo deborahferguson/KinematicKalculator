@@ -24,6 +24,14 @@ public class LinearSolutions extends ActionBarActivity {
         double fVelocity = intent.getDoubleExtra("final velocity",0.0);
         double time = intent.getDoubleExtra("time",0.0);
 
+        //rounding to keep 2 decimal places
+        acceleration = ((double)(Math.round(acceleration*100)))/100.0;
+        distance = ((double)(Math.round(distance*100)))/100.0;
+        iVelocity = ((double)(Math.round(iVelocity*100)))/100.0;
+        fVelocity = ((double)(Math.round(fVelocity*100)))/100.0;
+        time = ((double)(Math.round(time*100)))/100.0;
+
+        //keeping track of which equations are used
         double firstEquation = intent.getDoubleExtra("first equation", 0.0);
         double secondEquation = intent.getDoubleExtra("second equation", 0.0);
 
