@@ -9,5 +9,6 @@
     <string name="title_activity_radial">Radial</string>
     <string name="title_activity_projectile">Projectile</string>
     <string name="title_activity_linear_solutions">LinearSolutions</string>
+    <string name="title_activity_rotational_solutions">RotationalSolutions</string>
 
 </resources>

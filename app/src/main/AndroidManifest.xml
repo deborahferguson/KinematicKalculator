@@ -48,6 +48,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.developer.debbie.kinematickalculator.Linear2D" />
         </activity>
+        <activity
+            android:name=".RotationalSolutions"
+            android:label="@string/title_activity_rotational_solutions"
+            android:parentActivityName=".Radial" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.developer.debbie.kinematickalculator.Radial" />
+        </activity>
     </application>
 
 </manifest>
